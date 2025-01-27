@@ -45,7 +45,7 @@ class ClaudeAgent(Agent):
             self.anthropic = AnthropicBedrock(
                 aws_access_key=os.environ.get("AWS_ACCESS_KEY_ID"),
                 aws_secret_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
-                aws_region="us-west-2"
+                aws_region=os.environ.get("AWS_DEFAULT_REGION")
             )     
 
     def init_agent(self, system_prompt, role):
